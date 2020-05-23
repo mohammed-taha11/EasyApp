@@ -32,3 +32,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: WhiteSource Bolt@20
+  inputs:
+    cwd: 'F:\DevOps\Git\repo\EasyApp\App\src\Code\WebSolution'
