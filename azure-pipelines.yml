@@ -21,7 +21,16 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    platform: 'any cpu'
+    configuration: 'release'
+    clean: true
+    restoreNugetPackages: true
+    msbuildArchitecture: 'x64'
+    createLogFile: true
+    
 - task: WhiteSource Bolt@20
   inputs:
     cwd: 'https://github.com/mohammed-taha11/EasyApp.git'
