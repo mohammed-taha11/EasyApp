@@ -17,6 +17,12 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: 'https://github.com/mohammed-taha11/EasyApp.git'
+    feedsToUse: 'config'
+    
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
