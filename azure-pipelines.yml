@@ -21,15 +21,6 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
-  inputs:
-    solution: '**\*.csproj'
-    platform: 'any cpu'
-    configuration: 'release'
-    clean: true
-    restoreNugetPackages: false
-    msbuildArchitecture: 'x64'
-    createLogFile: true
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
