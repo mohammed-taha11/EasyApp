@@ -27,10 +27,15 @@ steps:
     platform: 'any cpu'
     configuration: 'release'
     clean: true
-    restoreNugetPackages: true
+    restoreNugetPackages: false
     msbuildArchitecture: 'x64'
     createLogFile: true
-    
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    zipAfterPublish: false
+    workingDirectory: 'F:\DevOps\publish'    
 - task: WhiteSource Bolt@20
   inputs:
     cwd: 'https://github.com/mohammed-taha11/EasyApp.git'
