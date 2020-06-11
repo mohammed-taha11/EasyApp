@@ -21,6 +21,11 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'https://github.com/mohammed-taha11/EasyApp.git'
+
 - task: WhiteSource Bolt@20
   inputs:
-    cwd: 'https://github.com/DevOpsVisions/EasyApp.git'
+    cwd: 'https://github.com/mohammed-taha11/EasyApp.git'
