@@ -23,7 +23,7 @@ steps:
 
 - task: VSBuild@1
   inputs:
-    solution: '**\*.sln'
+    solution: '**\*.csproj'
     platform: 'any cpu'
     configuration: 'release'
     clean: true
